@@ -10,7 +10,11 @@ public class Main {
     public static void main(String[] args) {
 
         String[] adn = cargarADN().toArray(new String[6]);
-        System.out.println(esMutante(adn) ? "El ADN es mutante" : "El ADN no es mutante");
+        // Descomentar para hacer pruebas de ambos casos
+        // String[] adn = {"ATGCGA","CAGTGC","TTATGT","AGAAGG","CCCCTA","TCACTG"}; 
+        // String[] adn = {"ATGCAA","CCATTG","TATAGC","GGCCAT","GCTATC","TCACTG"};
+        System.out.println(isMutant(adn) ? "El ADN es mutante" : "El ADN no es mutante");
+    
 
     }
 
@@ -33,7 +37,7 @@ public class Main {
         return adn;
     }
 
-    public static boolean esMutante(String[] adn) {
+    public static boolean isMutant(String[] adn) {
         HashMap<String, Integer> apariciones = new HashMap<String, Integer>();
         HashMap<String, Boolean> esMutante = new HashMap<String, Boolean>();
         apariciones.put("horizontales", 1);
